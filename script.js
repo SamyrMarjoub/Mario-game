@@ -3,6 +3,7 @@ const mario = document.querySelector('#mario')
 let pipePosition = null
 let marioPosition = null
 let score = 0
+const width = window.innerWidth
 $('.nuvem').addClass('nuvem_animation')
 const interval = setInterval(() => {
     if (pipePosition < 80 && marioPosition < 80 && pipePosition > 0) {
@@ -43,3 +44,11 @@ $('#no_option').click(function () {
 $('#yes_option').click(function () {
     window.location.href = 'https://www.google.com/'
 })
+if(width<900){
+    $('body').click(function(){
+        $('#mario').addClass('mario_jump_animation')
+        setTimeout(() => {
+            $('#mario').removeClass('mario_jump_animation')
+        }, 500);
+    })
+}

@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#flex-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#jogo {
+    width: 700px;
+    height: 400px;
+    align-self: center;
+    border: 1px solid black;
+    border-bottom: 25px solid green;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgb(111, 222, 255), white);
+}
+
+.nuvem {
+    background-image: url('./images/clouds.png');
+    background-repeat: no-repeat;
+    background-size: 500px;
+    width: 100%;
+    height: 100%;
+}
+
+.nuvem_animation {
+    animation: 15s linear infinite nuvem;
+}
+
+#mario {
+    position: absolute;
+    bottom: 0px;
+    width: 100px;
+    left: 0px;
+}
+
+#pipe {
+    position: absolute;
+    bottom: 0;
+    width: 60px;
+    right: 0px;
+}
+
+.pipe_animation {
+    animation: 1.5s linear pipe infinite;
+}
+
+.mario_jump_animation {
+    animation: 500ms linear mario_jump;
+}
+
+#score {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0;
+    margin-right: 10px;
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+
+}
+
+#game-over {
+    width: 100%;
+    height: 100px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgb(141, 141, 141);
+    top: 45%;
+    position: absolute;
+    display: none;
+    justify-content: center;
+   
+}
+#game-over-txt{
+    text-align: center;
+    font-size: 35px;
+    padding-bottom: 10px;
+}
+#container {
+    width: 300px;
+    height: 100%;
+    display: flex;
+    font-family: 'VT323', monospace;
+    flex-direction: column;
+}
+#buttons{
+    display: flex;
+    height: 100%;
+
+}
+.div-buttons{
+    width: 50%;
+    height: 100%;
+}
+.div-buttons button{
+    width: 100%;
+    height: 80%;
+    font-size: 20px;
+    background-color: transparent;
+    color: rgb(108, 102, 102);
+    border: 1px solid rgb(159, 158, 158);
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover{
+    background-color: black;
+    color: white;
+    transition: 0.5s all;
+}
+#game-over-txt {
+    margin: 0;
+}
+@keyframes mario_jump {
+    0% {
+        bottom: 0px;
+    }
+
+    25% {
+        bottom: 160px;
+    }
+
+    50% {
+        bottom: 160px;
+    }
+
+    75% {
+        bottom: 160px;
+    }
+
+    100% {
+        bottom: 0px;
+    }
+}
+
+@keyframes pipe {
+    from {
+        right: -70px
+    }
+
+    to {
+        right: 100%
+    }
+}
+
+@keyframes nuvem {
+    from {
+        background-position: 700px 50px;
+    }
+
+    to {
+        background-position: -500px 50px;
+    }
+}
